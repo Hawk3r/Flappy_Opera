@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkox562psn0tp"]
+
+[ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="1_lti8b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 322)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -119.0
+offset_top = -228.0
+offset_right = 1315.0
+offset_bottom = 1108.0
+color = Color(0.60784316, 1, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_left = -91.0
+offset_top = -3.0
+offset_right = 1215.0
+offset_bottom = 771.0
+texture = ExtResource("1_lti8b")
