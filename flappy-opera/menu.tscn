@@ -53,6 +53,7 @@ script = SubResource("GDScript_4hy44")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
+process_mode = 3
 offset_left = 238.0
 offset_top = 335.0
 offset_right = 460.0
@@ -100,5 +101,13 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(605, 414)
 stream = ExtResource("3_mae5d")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 171.0
+offset_right = 627.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+text = "Press space to start"
 
 [connection signal="pressed" from="Button" to="." method="_on_start_pressed"]

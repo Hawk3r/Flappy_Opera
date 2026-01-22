@@ -6,7 +6,7 @@ var spawnPos : Vector2
 var spawnRot : float
 
 func _ready():
-	#add_to_group("bullet")
+	
 	global_position = spawnPos
 	global_rotation = 0
 
@@ -15,15 +15,15 @@ func _physics_process(delta: float) -> void:
 	velocity.y= 0
 	move_and_slide()
 	
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
+	#for i in get_slide_collision_count():
+		#var collision = get_slide_collision(i)
+		#var collider = collision.get_collider()
 		
 		#if collider.name == "CharacterBody2D":
 		#	queue_free()
 		#	break
-	#if position.x < -660:
-	#	queue_free()
+	if position.x < -760:
+		queue_free()
 
 
 

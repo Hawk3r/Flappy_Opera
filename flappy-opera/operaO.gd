@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+var score = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -11,15 +11,17 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
+	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("mouse")):
 		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction := Input.get_axis("ui_left", "ui_right")
-	#if direction:
-	#	velocity.x = direction * SPEED
-	#else:
-	#	velocity.x = move_toward(velocity.x, 0, SPEED)
+	
 
 	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("score"):
+		score+=1
+	#print("HIT",body.name)
+	elif body.is_in_group("obstacle"):
+		print("Gameover")
+		get_tree().paused = true
+	pass # Replace with function body.

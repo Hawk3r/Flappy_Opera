@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://djf4o55ymkyto"]
+[gd_scene load_steps=8 format=3 uid="uid://djf4o55ymkyto"]
 
 [ext_resource type="Shader" uid="uid://ccfmqty7q7s0k" path="res://citybg.gdshader" id="1_feb5d"]
 [ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://b3o6c7p57loe8" path="res://OperaO.tscn" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://bnwjoxy1uw1ix" path="res://generator.gd" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://cwgttu2p7os38" path="res://game_ui.gd" id="5_7jktm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
 shader = ExtResource("1_feb5d")
@@ -21,6 +22,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_exit_pressed() -> void:
+	pass # Replace with function body.
 "
 
 [node name="gameplay" type="Node2D"]
@@ -50,29 +55,11 @@ metadata/_edit_use_anchors_ = true
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_7jktm")]
 position = Vector2(404, 233)
 
-[node name="Button" type="Button" parent="."]
-offset_left = 924.0
-offset_top = 11.0
-offset_right = 1146.0
-offset_bottom = 125.0
-text = "Pause"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 921.0
-offset_top = 143.0
-offset_right = 1143.0
-offset_bottom = 257.0
-text = "Exit"
-metadata/_edit_use_anchors_ = true
-
 [node name="Node2D" type="Node2D" parent="."]
-visible = false
-position = Vector2(1018, -49)
+position = Vector2(1291, -34)
 script = ExtResource("4_fc0e3")
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
-visible = false
 offset_left = -9.0
 offset_top = -8.0
 offset_right = 12.0
@@ -80,6 +67,51 @@ offset_bottom = 13.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Tim" type="Timer" parent="Node2D"]
-wait_time = 4.5
+wait_time = 3.5
 
 [node name="Tim2" type="Timer" parent="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("pause", "resume", "lab")]
+script = ExtResource("5_7jktm")
+pause = NodePath("pause")
+resume = NodePath("resume")
+lab = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 442.0
+offset_top = 117.0
+offset_right = 664.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 41
+text = "Game Over"
+
+[node name="pause" type="Button" parent="CanvasLayer"]
+offset_left = 1011.0
+offset_top = 37.0
+offset_right = 1078.0
+offset_bottom = 96.0
+text = "pause"
+
+[node name="exit" type="Button" parent="CanvasLayer"]
+process_mode = 3
+offset_left = 1087.0
+offset_top = 34.0
+offset_right = 1142.0
+offset_bottom = 93.0
+text = "exit"
+
+[node name="resume" type="Button" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+offset_left = 1011.0
+offset_top = 37.0
+offset_right = 1078.0
+offset_bottom = 96.0
+text = "resume"
+
+[connection signal="pressed" from="CanvasLayer/pause" to="CanvasLayer" method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="CanvasLayer" method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/resume" to="CanvasLayer" method="_on_resume_pressed"]
