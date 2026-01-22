@@ -54,7 +54,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(404, 233)
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(1291, -34)
+position = Vector2(1291, 300)
 script = ExtResource("4_fc0e3")
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]

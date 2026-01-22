@@ -6,9 +6,10 @@ extends Node2D
 
 
 # Define the boundaries of the allowed space
-#var min_y = -50
-#var max_y = -300
+var min_y = -100
+var max_y = 250
 var updown = true
+var loc = 0
 func _ready():
 	timer.timeout.connect(_on_cooldown_timeout)
 	timer.start()
@@ -17,6 +18,9 @@ func _ready():
 	pass
 
 func shoot():
+	loc = randf_range(min_y, max_y)
+	global_position.y = loc
+	print(loc)
 	var instance = projectile.instantiate()
 	instance.spawnPos = global_position
 	#instance.spawnRot = rotation
