@@ -1,18 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://rq0ecfleihih"]
+[gd_scene load_steps=4 format=3 uid="uid://rq0ecfleihih"]
+
+[ext_resource type="Script" uid="uid://c67024s4nusff" path="res://obstacle.gd" id="1_aubd6"]
+[ext_resource type="Texture2D" uid="uid://7j4wwtoyigrs" path="res://pipe.png" id="1_sl1jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcbvg"]
-size = Vector2(301, 330)
+size = Vector2(205.5, 330)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="obstacle" type="CharacterBody2D"]
+disable_mode = 1
+motion_mode = 1
+script = ExtResource("1_aubd6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(443, -3)
+position = Vector2(-3.5, -71)
 shape = SubResource("RectangleShape2D_qcbvg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
-position = Vector2(-2, 332)
-shape = SubResource("RectangleShape2D_qcbvg")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.5, 651)
+texture = ExtResource("1_sl1jc")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(441, 659)
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-6.5, -62)
+texture = ExtResource("1_sl1jc")
+flip_v = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 666)
 shape = SubResource("RectangleShape2D_qcbvg")
