@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 
-	move_and_slide()
+	move_and_slide() 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("score"):

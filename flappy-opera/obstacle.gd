@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var SPEED = 150
+@export var SPEED = 200
 #var dir : float
 var spawnPos : Vector2
-var spawnRot : float
+
 
 func _ready():
 	
@@ -14,16 +14,8 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, -SPEED).rotated(180)
 	velocity.y= 0
 	move_and_slide()
-	
-	#for i in get_slide_collision_count():
-		#var collision = get_slide_collision(i)
-		#var collider = collision.get_collider()
-		
-		#if collider.name == "CharacterBody2D":
-		#	queue_free()
-		#	break
-	if position.x < -760:
-		queue_free()
+	#if position.x < -760:
+		#queue_free()
 
 
 
