@@ -59,7 +59,7 @@ offset_bottom = 449.0
 text = "Play"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="exit" type="Button" parent="."]
 offset_left = 603.0
 offset_top = 498.0
 offset_right = 825.0
@@ -109,3 +109,4 @@ theme_override_colors/font_color = Color(0.0142752165, 0.014275218, 0.014275218,
 text = "Press space to start"
 
 [connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

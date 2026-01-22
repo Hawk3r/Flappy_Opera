@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://djf4o55ymkyto"]
+[gd_scene load_steps=9 format=3 uid="uid://djf4o55ymkyto"]
 
 [ext_resource type="Shader" uid="uid://ccfmqty7q7s0k" path="res://citybg.gdshader" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://brhct6uu2cic" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://b3o6c7p57loe8" path="res://OperaO.tscn" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://bnwjoxy1uw1ix" path="res://generator.gd" id="4_fc0e3"]
@@ -27,6 +28,7 @@ func _on_exit_pressed() -> void:
 "
 
 [node name="gameplay" type="Node2D"]
+script = ExtResource("1_ryrav")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 322)
@@ -50,12 +52,14 @@ texture = ExtResource("2_fc0e3")
 script = SubResource("GDScript_eow3j")
 metadata/_edit_use_anchors_ = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_7jktm")]
+[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("gameover") instance=ExtResource("3_7jktm")]
 position = Vector2(404, 233)
+gameover = NodePath("../CanvasLayer/Label")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("scoreboard")]
 position = Vector2(1291, 300)
 script = ExtResource("4_fc0e3")
+scoreboard = NodePath("../CanvasLayer/scoreboard")
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
 offset_left = -9.0
@@ -74,6 +78,14 @@ script = ExtResource("5_7jktm")
 pause = NodePath("pause")
 resume = NodePath("resume")
 lab = NodePath("Label")
+
+[node name="scoreboard" type="Label" parent="CanvasLayer"]
+offset_left = 419.0
+offset_top = 24.0
+offset_right = 570.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 visible = false

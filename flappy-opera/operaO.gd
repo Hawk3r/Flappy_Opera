@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var score = 0
+@export var gameover: Label
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -18,10 +19,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide() 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("score"):
-		score+=1
+
 	#print("HIT",body.name)
-	elif body.is_in_group("obstacle"):
+	if body.is_in_group("obstacle"):
 		print("Gameover")
 		get_tree().paused = true
+		gameover.visible = true
+		gameover.text = "Game Over"
 	pass # Replace with function body.

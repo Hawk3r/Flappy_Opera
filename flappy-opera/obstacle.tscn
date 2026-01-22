@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcbvg"]
 size = Vector2(205.5, 363)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_aubd6"]
-b = Vector2(0, 509)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aubd6"]
+size = Vector2(20, 314)
 
 [node name="obstacle" type="CharacterBody2D" groups=["obstacle"]]
 disable_mode = 1
@@ -43,7 +43,10 @@ shape = SubResource("RectangleShape2D_qcbvg")
 position = Vector2(5, 608)
 shape = SubResource("RectangleShape2D_qcbvg")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="." groups=["trigger"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource("SegmentShape2D_aubd6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" groups=["trigger"]]
+position = Vector2(0, 269)
+shape = SubResource("RectangleShape2D_aubd6")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

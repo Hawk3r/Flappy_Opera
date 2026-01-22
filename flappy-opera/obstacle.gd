@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var SPEED = 150
 #var dir : float
 var spawnPos : Vector2
-
+signal score
 
 func _ready():
 	
@@ -25,3 +25,9 @@ func _physics_process(delta: float) -> void:
 #	print("HIT")
 #	queue_free()
 #	pass 
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	print("score")
+	score.emit()
+	pass # Replace with function body.
