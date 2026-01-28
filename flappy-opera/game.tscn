@@ -30,12 +30,14 @@ func _on_exit_pressed() -> void:
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
-bg_color = Color(3.5616756e-06, 0.89343584, 0.48700613, 0.972549)
+bg_color = Color(0, 0.7019608, 0.3764706, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 20
+shadow_color = Color(0, 0.39662516, 0.07263943, 0.6)
+shadow_size = 2
 
 [node name="gameplay" type="Node2D"]
 script = ExtResource("1_ryrav")
@@ -130,6 +132,7 @@ offset_bottom = 300.0
 theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("8_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
 text = "Restart"
@@ -143,6 +146,7 @@ offset_bottom = 81.0
 theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("8_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
 text = "Pause"
@@ -156,9 +160,10 @@ offset_bottom = 81.0
 theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("8_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
-text = "exit"
+text = "Exit"
 
 [node name="resume" type="Button" parent="CanvasLayer"]
 process_mode = 3
@@ -170,6 +175,7 @@ offset_bottom = 81.0
 theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("8_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
 text = "Resume
