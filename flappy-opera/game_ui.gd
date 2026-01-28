@@ -2,6 +2,7 @@ extends CanvasLayer
 @export var pause: Button
 @export var resume: Button
 @export var lab: Label
+@export var restart: Button
 
 
 
@@ -36,4 +37,9 @@ func _on_resume_pressed() -> void:
 	resume.visible = false
 	pause.visible  = true
 	lab.visible  = false
+	pass # Replace with function body.
+
+
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
 	pass # Replace with function body.

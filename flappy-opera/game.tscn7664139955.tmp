@@ -120,8 +120,31 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 41
 text = "Game Over"
 
-[node name="restart" type="Button" parent="CanvasLayer"]
+[node name="pause" type="Button" parent="CanvasLayer"]
+offset_left = 1011.0
+offset_top = 37.0
+offset_right = 1078.0
+offset_bottom = 96.0
+text = "pause"
+
+[node name="exit" type="Button" parent="CanvasLayer"]
 process_mode = 3
+offset_left = 1087.0
+offset_top = 34.0
+offset_right = 1142.0
+offset_bottom = 93.0
+text = "exit"
+
+[node name="resume" type="Button" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+offset_left = 1011.0
+offset_top = 37.0
+offset_right = 1078.0
+offset_bottom = 96.0
+text = "resume"
+
+[node name="restart" type="Button" parent="CanvasLayer"]
 visible = false
 offset_left = 489.0
 offset_top = 236.0
@@ -134,48 +157,7 @@ theme_override_fonts/font = ExtResource("8_j5wjh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
 text = "Restart"
 
-[node name="pause" type="Button" parent="CanvasLayer"]
-process_mode = 3
-offset_left = 857.0
-offset_top = 17.0
-offset_right = 997.0
-offset_bottom = 81.0
-theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
-theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
-theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
-theme_override_fonts/font = ExtResource("8_j5wjh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
-text = "Pause"
-
-[node name="exit" type="Button" parent="CanvasLayer"]
-process_mode = 3
-offset_left = 1006.0
-offset_top = 17.0
-offset_right = 1146.0
-offset_bottom = 81.0
-theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
-theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
-theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
-theme_override_fonts/font = ExtResource("8_j5wjh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
-text = "exit"
-
-[node name="resume" type="Button" parent="CanvasLayer"]
-process_mode = 3
-visible = false
-offset_left = 857.0
-offset_top = 17.0
-offset_right = 997.0
-offset_bottom = 81.0
-theme_override_colors/icon_normal_color = Color(0.63529414, 0.8745098, 0.023529412, 1)
-theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
-theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
-theme_override_fonts/font = ExtResource("8_j5wjh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
-text = "Resume
-"
-
-[connection signal="pressed" from="CanvasLayer/restart" to="CanvasLayer" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause" to="CanvasLayer" method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/exit" to="CanvasLayer" method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/resume" to="CanvasLayer" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/restart" to="CanvasLayer" method="_on_restart_pressed"]
