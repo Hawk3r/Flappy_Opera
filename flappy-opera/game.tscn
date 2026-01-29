@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://djf4o55ymkyto"]
+[gd_scene load_steps=11 format=3 uid="uid://djf4o55ymkyto"]
 
 [ext_resource type="Shader" uid="uid://ccfmqty7q7s0k" path="res://citybg.gdshader" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://brhct6uu2cic" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="2_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://b3o6c7p57loe8" path="res://OperaO.tscn" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://bnwjoxy1uw1ix" path="res://generator.gd" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://cwgttu2p7os38" path="res://game_ui.gd" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://d0owpslyklymo" path="res://floor_foreground.webp" id="7_eow3j"]
@@ -63,11 +62,6 @@ offset_bottom = 771.0
 texture = ExtResource("2_fc0e3")
 script = SubResource("GDScript_eow3j")
 metadata/_edit_use_anchors_ = true
-
-[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("gameover", "restart") instance=ExtResource("3_7jktm")]
-position = Vector2(404, 233)
-gameover = NodePath("../CanvasLayer/Label")
-restart = NodePath("../CanvasLayer/restart")
 
 [node name="spawner" type="Node2D" parent="." node_paths=PackedStringArray("scoreboard")]
 position = Vector2(1291, 300)
