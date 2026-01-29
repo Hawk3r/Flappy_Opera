@@ -2,10 +2,8 @@ extends Node2D
 @onready var main = get_tree().get_root().get_node("gameplay")
 @onready var projectile= load("res://obstacle.tscn")
 @onready var timer = $Tim
-@onready var movetimer = $Tim2
 @export var scoreboard: Label
 
-# Define the boundaries of the allowed space
 var min_y = -100
 var max_y = 250
 var loc = 0
@@ -13,8 +11,6 @@ var score = 0
 func _ready():
 	timer.timeout.connect(_on_cooldown_timeout)
 	timer.start()
-	#movetimer.timeout.connect(_on_movecooldown_timeout)
-	#movetimer.start()
 	pass
 
 func shoot():
@@ -30,7 +26,6 @@ func shoot():
 	
 func _on_cooldown_timeout():
 	shoot()
-
 	pass
 
 

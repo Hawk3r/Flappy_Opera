@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkox562psn0tp"]
+[gd_scene load_steps=11 format=3 uid="uid://dkox562psn0tp"]
 
 [ext_resource type="Script" uid="uid://bdetb81u8ydwr" path="res://menu.gd" id="1_4hy44"]
 [ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="1_lti8b"]
@@ -37,8 +37,12 @@ corner_detail = 20
 shadow_color = Color(0, 0.39607844, 0.07450981, 0.6)
 shadow_size = 2
 
-[node name="menu" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
+
+[node name="menu" type="Node2D" node_paths=PackedStringArray("main", "credits")]
 script = ExtResource("1_4hy44")
+main = NodePath("main menu")
+credits = NodePath("credits")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -119.0
@@ -64,19 +68,6 @@ position = Vector2(605, 414)
 stream = ExtResource("3_mae5d")
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = 396.0
-offset_top = 583.0
-offset_right = 719.0
-offset_bottom = 632.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_l48gv")
-text = "Game rules:
-press space or left mouse click to flap"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 252.0
 offset_top = -1.0
@@ -89,34 +80,22 @@ stretch_mode = 3
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 322)
 
-[node name="exit" type="Button" parent="."]
-offset_left = 632.0
-offset_top = 504.0
-offset_right = 772.0
-offset_bottom = 568.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+[node name="main menu" type="CanvasLayer" parent="."]
+
+[node name="credits" type="Button" parent="main menu"]
+offset_left = 335.0
+offset_top = 499.0
+offset_right = 475.0
+offset_bottom = 563.0
 theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("5_l48gv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
-text = "Exit"
+text = "Credits"
 
-[node name="playbut" type="Button" parent="."]
-offset_left = 328.0
-offset_top = 358.0
-offset_right = 468.0
-offset_bottom = 422.0
-theme_override_colors/icon_normal_color = Color(0.12869874, 0.4525987, 0.19435537, 1)
-theme_override_colors/icon_focus_color = Color(0.4300577, 0.5373522, 0.01003815, 1)
-theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("5_l48gv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
-text = "Play"
-
-[node name="char" type="Button" parent="."]
+[node name="char" type="Button" parent="main menu"]
 offset_left = 633.0
 offset_top = 362.0
 offset_right = 773.0
@@ -130,18 +109,85 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
 text = "Character
 Select"
 
-[node name="credits" type="Button" parent="."]
-offset_left = 335.0
-offset_top = 499.0
-offset_right = 475.0
-offset_bottom = 563.0
+[node name="Label" type="Label" parent="main menu"]
+offset_left = 396.0
+offset_top = 583.0
+offset_right = 719.0
+offset_bottom = 632.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_l48gv")
+text = "Game rules:
+press space or left mouse click to flap"
+
+[node name="exit" type="Button" parent="main menu"]
+offset_left = 632.0
+offset_top = 504.0
+offset_right = 772.0
+offset_bottom = 568.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("5_l48gv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
-text = "Credits"
+text = "Exit"
 
-[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="playbut" to="." method="_on_start_pressed"]
+[node name="playbut" type="Button" parent="main menu"]
+offset_left = 328.0
+offset_top = 358.0
+offset_right = 468.0
+offset_bottom = 422.0
+theme_override_colors/icon_normal_color = Color(0.12869874, 0.4525987, 0.19435537, 1)
+theme_override_colors/icon_focus_color = Color(0.4300577, 0.5373522, 0.01003815, 1)
+theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_l48gv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
+text = "Play"
+
+[node name="credits" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Creturn" type="Button" parent="credits"]
+offset_left = 478.0
+offset_top = 549.0
+offset_right = 618.0
+offset_bottom = 613.0
+theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
+theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
+theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_l48gv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
+text = "Return"
+
+[node name="Credits_label" type="Label" parent="credits"]
+offset_left = 64.0
+offset_top = 175.0
+offset_right = 1107.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ecwwl")
+text = "Credits
+developer: Hawk3r 
+github link: https://github.com/Hawk3r
+
+OSTs used
+Uma Musume: Umapyoi Densetsu (8bit,NES style) by ころん-COLON 8BIT **MUSIC-**
+https://www.youtube.com/watch?v=nfbdD5WfxeI
+
+(Game OST) Uma Musume - Character Select (Make Debut)
+https://www.youtube.com/watch?v=YIfFvzwiNvM&list=PLZGtjAl-fznrHM5bwcyp3CNFL4vmncymq&index=10
+
+opera-O bird jpeg
+found it in this specific reddit post
+https://www.reddit.com/r/UmaMusume/comments/1p6f0vl/why_is_tm_opera_o_sometimes_depicted_as_a_bird/"
+
+[connection signal="pressed" from="main menu/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main menu/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="main menu/playbut" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="credits/Creturn" to="." method="_on_creturn_pressed"]

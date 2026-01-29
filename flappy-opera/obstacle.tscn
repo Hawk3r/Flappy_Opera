@@ -46,7 +46,7 @@ shape = SubResource("RectangleShape2D_qcbvg")
 [node name="Area2D2" type="Area2D" parent="." groups=["trigger"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" groups=["trigger"]]
-position = Vector2(0, 269)
+position = Vector2(86, 269)
 shape = SubResource("RectangleShape2D_aubd6")
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
