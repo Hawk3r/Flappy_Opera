@@ -1,5 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://de0vsddifmkfq"]
+[gd_scene load_steps=3 format=3 uid="uid://de0vsddifmkfq"]
 
 [ext_resource type="PackedScene" uid="uid://b3o6c7p57loe8" path="res://OperaO.tscn" id="1_qj5u2"]
+[ext_resource type="Texture2D" uid="uid://d0lrgnietxdq2" path="res://tentative_doto.png" id="2_q8kuq"]
 
 [node name="CharacterBody2D" instance=ExtResource("1_qj5u2")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_q8kuq")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(64, 105)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(63, 105)
+rotation = 1.5707964

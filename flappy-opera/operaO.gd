@@ -6,15 +6,16 @@ const JUMP_VELOCITY = -400.0
 var score = 0
 @export var gameover: Label
 @export var restart: Button
-
+var movable = true
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("mouse")):
-		velocity.y = JUMP_VELOCITY
+	if movable:
+		if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("mouse")):
+			velocity.y = JUMP_VELOCITY
 	
 
 	move_and_slide() 
@@ -28,4 +29,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		gameover.visible = true
 		gameover.text = "Game Over"
 		restart.visible = true
+		var movable = false
 	pass # Replace with function body.

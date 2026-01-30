@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkox562psn0tp"]
+[gd_scene load_steps=13 format=3 uid="uid://dkox562psn0tp"]
 
 [ext_resource type="Script" uid="uid://bdetb81u8ydwr" path="res://menu.gd" id="1_4hy44"]
 [ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="1_lti8b"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bc8wofjvw1mh7" path="res://8bit.mp3" id="3_mae5d"]
 [ext_resource type="FontFile" uid="uid://eu77d364s52j" path="res://FOT-RodinWanpaku Pro EB.otf" id="5_l48gv"]
 [ext_resource type="Texture2D" uid="uid://dv7uhxpxkvn2p" path="res://uma logo.png" id="6_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://d0lrgnietxdq2" path="res://tentative_doto.png" id="7_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://ct44yb02jsgfv" path="res://Tentative.png" id="8_nrnbx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mae5d"]
 shader = ExtResource("1_ouk20")
@@ -39,10 +41,12 @@ shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
 
-[node name="menu" type="Node2D" node_paths=PackedStringArray("main", "credits")]
+[node name="menu" type="Node2D" node_paths=PackedStringArray("main", "credits", "charSel", "selector")]
 script = ExtResource("1_4hy44")
 main = NodePath("main menu")
 credits = NodePath("credits")
+charSel = NodePath("charselect")
+selector = NodePath("charselect/selector")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -119.0
@@ -149,6 +153,61 @@ theme_override_fonts/font = ExtResource("5_l48gv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
 text = "Play"
 
+[node name="charselect" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Doto" type="Button" parent="charselect"]
+offset_left = 705.0
+offset_top = 265.0
+offset_right = 878.0
+offset_bottom = 435.0
+
+[node name="TextureRect" type="TextureRect" parent="charselect/Doto"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 173.0
+offset_bottom = 168.0
+texture = ExtResource("7_kk3ma")
+expand_mode = 1
+flip_h = true
+
+[node name="Opera" type="Button" parent="charselect"]
+offset_left = 198.0
+offset_top = 254.0
+offset_right = 371.0
+offset_bottom = 465.0
+
+[node name="TextureRect" type="TextureRect" parent="charselect/Opera"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 20.0
+offset_right = 174.0
+offset_bottom = 206.0
+texture = ExtResource("8_nrnbx")
+expand_mode = 1
+
+[node name="CharReturn" type="Button" parent="charselect"]
+offset_left = 478.0
+offset_top = 549.0
+offset_right = 618.0
+offset_bottom = 613.0
+theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
+theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
+theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_l48gv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
+text = "Return"
+
+[node name="selector" type="Label" parent="charselect"]
+offset_left = 473.0
+offset_top = 490.0
+offset_right = 666.0
+offset_bottom = 534.0
+text = "Select Character. 
+TM Opera O is default"
+
 [node name="credits" type="CanvasLayer" parent="."]
 visible = false
 
@@ -188,6 +247,10 @@ found it in this specific reddit post
 https://www.reddit.com/r/UmaMusume/comments/1p6f0vl/why_is_tm_opera_o_sometimes_depicted_as_a_bird/"
 
 [connection signal="pressed" from="main menu/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main menu/char" to="." method="_on_char_pressed"]
 [connection signal="pressed" from="main menu/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="main menu/playbut" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="charselect/Doto" to="." method="_on_doto_pressed"]
+[connection signal="pressed" from="charselect/Opera" to="." method="_on_opera_pressed"]
+[connection signal="pressed" from="charselect/CharReturn" to="." method="_on_char_return_pressed"]
 [connection signal="pressed" from="credits/Creturn" to="." method="_on_creturn_pressed"]

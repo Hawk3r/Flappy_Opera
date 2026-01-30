@@ -5,20 +5,22 @@
 [ext_resource type="AudioStream" uid="uid://dpthngl1nj5wt" path="res://makedebut.mp3" id="3_u1l1f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh25w"]
-radius = 54.0
-height = 140.0
+radius = 70.0
+height = 176.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1l1f"]
-radius = 56.0
-height = 152.0
+radius = 68.0
+height = 176.0
 
 [node name="operaO" type="CharacterBody2D"]
+process_mode = 3
 script = ExtResource("1_lh25w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(62, 97)
 scale = Vector2(0.4023669, 0.41463417)
 texture = ExtResource("1_66fet")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(57, 100)
