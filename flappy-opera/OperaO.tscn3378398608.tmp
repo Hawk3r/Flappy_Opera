@@ -5,14 +5,15 @@
 [ext_resource type="AudioStream" uid="uid://dpthngl1nj5wt" path="res://makedebut.mp3" id="3_u1l1f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh25w"]
-radius = 63.0
-height = 166.0
+radius = 70.0
+height = 176.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1l1f"]
-radius = 65.0
-height = 172.0
+radius = 68.0
+height = 176.0
 
 [node name="operaO" type="CharacterBody2D"]
+process_mode = 3
 script = ExtResource("1_lh25w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

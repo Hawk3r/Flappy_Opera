@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 var score = 0
 @export var gameover: Label
 @export var restart: Button
@@ -19,15 +19,26 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide() 
+	
+	if position.y > 1100 or (position.y< -500):
+		gameEnd()
+		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 
 	#print("HIT",body.name)
 	if body.is_in_group("obstacle"):
-		print("Gameover")
-		get_tree().paused = true
-		gameover.visible = true
-		gameover.text = "Game Over"
-		restart.visible = true
-		var movable = false
+		gameEnd()
 	pass # Replace with function body.
+
+func gameEnd():
+	print("Gameover")
+	movable = false
+	gameover.visible = true
+	gameover.text = "Game Over"
+	restart.visible = true
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	get_tree().paused = true
+	$CollisionShape2D.set_deferred("disabled",true)
+	velocity.y = -600
+	

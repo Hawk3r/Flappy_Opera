@@ -9,9 +9,9 @@
 texture = ExtResource("2_q8kuq")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(64, 105)
+position = Vector2(59, 107)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(63, 105)
+position = Vector2(60, 107)
 rotation = 1.5707964

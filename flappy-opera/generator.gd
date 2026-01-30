@@ -4,7 +4,7 @@ extends Node2D
 @onready var timer = $Tim
 @export var scoreboard: Label
 
-var min_y = -100
+var min_y = -200
 var max_y = 250
 var loc = 0
 var score = 0

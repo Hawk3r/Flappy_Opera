@@ -177,6 +177,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
 text = "Resume
 "
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(381, -151)
+
 [connection signal="pressed" from="CanvasLayer/restart" to="CanvasLayer" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause" to="CanvasLayer" method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/exit" to="CanvasLayer" method="_on_exit_pressed"]
