@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://eu77d364s52j" path="res://FOT-RodinWanpaku Pro EB.otf" id="5_l48gv"]
 [ext_resource type="Texture2D" uid="uid://dv7uhxpxkvn2p" path="res://uma logo.png" id="6_ecwwl"]
 [ext_resource type="Texture2D" uid="uid://d0lrgnietxdq2" path="res://tentative_doto.png" id="7_kk3ma"]
-[ext_resource type="Texture2D" uid="uid://ct44yb02jsgfv" path="res://Tentative.png" id="8_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://dgblnxa0tdh54" path="res://operaO_1.png" id="8_kk3ma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mae5d"]
 shader = ExtResource("1_ouk20")
@@ -180,11 +180,11 @@ offset_bottom = 465.0
 
 [node name="TextureRect" type="TextureRect" parent="charselect/Opera"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 20.0
-offset_right = 174.0
-offset_bottom = 206.0
-texture = ExtResource("8_nrnbx")
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 173.0
+offset_bottom = 221.0
+texture = ExtResource("8_kk3ma")
 expand_mode = 1
 
 [node name="CharReturn" type="Button" parent="charselect"]
@@ -242,7 +242,7 @@ https://www.youtube.com/watch?v=nfbdD5WfxeI
 (Game OST) Uma Musume - Character Select (Make Debut)
 https://www.youtube.com/watch?v=YIfFvzwiNvM&list=PLZGtjAl-fznrHM5bwcyp3CNFL4vmncymq&index=10
 
-opera-O bird jpeg
+Doto sheep jpeg
 found it in this specific reddit post
 https://www.reddit.com/r/UmaMusume/comments/1p6f0vl/why_is_tm_opera_o_sometimes_depicted_as_a_bird/"
 
