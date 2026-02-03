@@ -1,22 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3o6c7p57loe8"]
+[gd_scene load_steps=9 format=3 uid="uid://b6scxjmiqgwk0"]
 
-[ext_resource type="Script" uid="uid://c4me270y0mvvq" path="res://operaO.gd" id="1_lh25w"]
-[ext_resource type="Texture2D" uid="uid://dgblnxa0tdh54" path="res://operaO_1.png" id="2_u1l1f"]
-[ext_resource type="Texture2D" uid="uid://cjjd3jisxcbjy" path="res://operaO_2.png" id="3_e61np"]
-[ext_resource type="AudioStream" uid="uid://dpthngl1nj5wt" path="res://makedebut.mp3" id="3_u1l1f"]
-[ext_resource type="Texture2D" uid="uid://bhk1vxp16pkj6" path="res://operaO_3.png" id="4_nl72b"]
+[ext_resource type="Script" uid="uid://c4me270y0mvvq" path="res://operaO.gd" id="1_va2mr"]
+[ext_resource type="Texture2D" uid="uid://dgblnxa0tdh54" path="res://operaO_1.png" id="2_4rjmf"]
+[ext_resource type="Texture2D" uid="uid://bhk1vxp16pkj6" path="res://operaO_3.png" id="3_l456w"]
+[ext_resource type="Texture2D" uid="uid://cjjd3jisxcbjy" path="res://operaO_2.png" id="4_jf7st"]
+[ext_resource type="AudioStream" uid="uid://dpthngl1nj5wt" path="res://makedebut.mp3" id="5_lgs1q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ggwtq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_nl72b")
+"texture": ExtResource("3_l456w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_e61np")
+"texture": ExtResource("4_jf7st")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_u1l1f")
+"texture": ExtResource("2_4rjmf")
 }],
 "loop": true,
 "name": &"default",
@@ -31,14 +31,14 @@ height = 132.0
 radius = 42.0
 height = 136.0
 
-[node name="operaO" type="CharacterBody2D"]
-script = ExtResource("1_lh25w")
+[node name="Mayano" type="CharacterBody2D"]
+script = ExtResource("1_va2mr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(62, 97)
 scale = Vector2(0.4023669, 0.41463417)
-texture = ExtResource("2_u1l1f")
+texture = ExtResource("2_4rjmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(61.375, 98.33153)
@@ -58,7 +58,7 @@ shape = SubResource("CapsuleShape2D_u1l1f")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(605, 414)
-stream = ExtResource("3_u1l1f")
+stream = ExtResource("5_lgs1q")
 autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

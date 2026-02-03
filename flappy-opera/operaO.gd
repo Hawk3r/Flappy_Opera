@@ -16,8 +16,12 @@ func _physics_process(delta: float) -> void:
 	if movable:
 		if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("mouse")):
 			velocity.y = JUMP_VELOCITY
+			
 	
-
+	if (velocity.y < 0):
+		$AnimatedSprite2D.play()
+	elif (velocity.y > 0):
+		$AnimatedSprite2D.stop()
 	move_and_slide() 
 	
 	if position.y > 1100 or (position.y< -500):
