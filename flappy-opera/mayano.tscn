@@ -41,6 +41,7 @@ scale = Vector2(0.4023669, 0.41463417)
 texture = ExtResource("2_4rjmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(61.375, 98.33153)
 scale = Vector2(0.41413045, 0.41413045)
 sprite_frames = SubResource("SpriteFrames_ggwtq")
