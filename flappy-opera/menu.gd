@@ -66,3 +66,11 @@ func _on_char_pressed() -> void:
 	main.visible = false
 	charSel.visible = true
 	pass # Replace with function body.
+
+
+func _on_mayano_pressed() -> void:
+	selector.text = "Mayano Top Gun selected"
+	CharSelect.char= 2
+	main.visible = true
+	charSel.visible = false
+	pass # Replace with function body.

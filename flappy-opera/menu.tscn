@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkox562psn0tp"]
+[gd_scene load_steps=14 format=3 uid="uid://dkox562psn0tp"]
 
 [ext_resource type="Script" uid="uid://bdetb81u8ydwr" path="res://menu.gd" id="1_4hy44"]
 [ext_resource type="Texture2D" uid="uid://oa7pm7uskdtc" path="res://citybg.webp" id="1_lti8b"]
@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bc8wofjvw1mh7" path="res://8bit.mp3" id="3_mae5d"]
 [ext_resource type="FontFile" uid="uid://eu77d364s52j" path="res://FOT-RodinWanpaku Pro EB.otf" id="5_l48gv"]
 [ext_resource type="Texture2D" uid="uid://dv7uhxpxkvn2p" path="res://uma logo.png" id="6_ecwwl"]
-[ext_resource type="Texture2D" uid="uid://d0lrgnietxdq2" path="res://tentative_doto.png" id="7_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://bxdpu5jfqpht2" path="res://mayano_1.png" id="7_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://c8wst0buwdn5w" path="res://doto_1.png" id="8_iqepy"]
 [ext_resource type="Texture2D" uid="uid://dgblnxa0tdh54" path="res://operaO_1.png" id="8_kk3ma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mae5d"]
@@ -86,11 +87,24 @@ position = Vector2(578, 322)
 
 [node name="main menu" type="CanvasLayer" parent="."]
 
+[node name="VBoxContainer" type="VBoxContainer" parent="main menu"]
+offset_left = 330.0
+offset_top = 348.0
+offset_right = 770.0
+offset_bottom = 576.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="main menu/VBoxContainer"]
+layout_mode = 2
+
 [node name="credits" type="Button" parent="main menu"]
-offset_left = 335.0
-offset_top = 499.0
-offset_right = 475.0
-offset_bottom = 563.0
+offset_left = 340.0
+offset_top = 498.0
+offset_right = 480.0
+offset_bottom = 562.0
 theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
@@ -101,9 +115,9 @@ text = "Credits"
 
 [node name="char" type="Button" parent="main menu"]
 offset_left = 633.0
-offset_top = 362.0
+offset_top = 365.0
 offset_right = 773.0
-offset_bottom = 426.0
+offset_bottom = 429.0
 theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
@@ -127,10 +141,10 @@ text = "Game rules:
 press space or left mouse click to flap"
 
 [node name="exit" type="Button" parent="main menu"]
-offset_left = 632.0
-offset_top = 504.0
-offset_right = 772.0
-offset_bottom = 568.0
+offset_left = 635.0
+offset_top = 499.0
+offset_right = 775.0
+offset_bottom = 563.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0.16418773, 0.56540686, 0.24723458, 1)
 theme_override_colors/icon_focus_color = Color(0.63529414, 0.7882353, 0.015686275, 1)
@@ -141,10 +155,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
 text = "Exit"
 
 [node name="playbut" type="Button" parent="main menu"]
-offset_left = 328.0
-offset_top = 358.0
-offset_right = 468.0
-offset_bottom = 422.0
+offset_left = 341.0
+offset_top = 363.0
+offset_right = 481.0
+offset_bottom = 427.0
 theme_override_colors/icon_normal_color = Color(0.12869874, 0.4525987, 0.19435537, 1)
 theme_override_colors/icon_focus_color = Color(0.4300577, 0.5373522, 0.01003815, 1)
 theme_override_colors/icon_pressed_color = Color(0.4862745, 0.7882353, 0.24705882, 1)
@@ -156,34 +170,48 @@ text = "Play"
 [node name="charselect" type="CanvasLayer" parent="."]
 visible = false
 
+[node name="Mayano" type="Button" parent="charselect"]
+offset_left = 842.0
+offset_top = 387.0
+offset_right = 1001.0
+offset_bottom = 433.0
+
+[node name="TextureRect" type="TextureRect" parent="charselect/Mayano"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -96.0
+offset_right = 200.07596
+offset_bottom = 142.0
+texture = ExtResource("7_nrnbx")
+expand_mode = 1
+
 [node name="Doto" type="Button" parent="charselect"]
-offset_left = 705.0
-offset_top = 265.0
-offset_right = 878.0
-offset_bottom = 435.0
+offset_left = 522.0
+offset_top = 336.0
+offset_right = 628.0
+offset_bottom = 426.0
 
 [node name="TextureRect" type="TextureRect" parent="charselect/Doto"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 10.0
-offset_right = 173.0
-offset_bottom = 168.0
-texture = ExtResource("7_kk3ma")
+offset_left = -82.0
+offset_top = -85.0
+offset_right = 174.07596
+offset_bottom = 153.0
+texture = ExtResource("8_iqepy")
 expand_mode = 1
-flip_h = true
 
 [node name="Opera" type="Button" parent="charselect"]
-offset_left = 198.0
-offset_top = 254.0
-offset_right = 371.0
-offset_bottom = 465.0
+offset_left = 256.0
+offset_top = 308.0
+offset_right = 340.0
+offset_bottom = 427.0
 
 [node name="TextureRect" type="TextureRect" parent="charselect/Opera"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = -9.0
-offset_right = 173.0
-offset_bottom = 221.0
+offset_left = -38.0
+offset_top = -68.0
+offset_right = 125.0
+offset_bottom = 162.0
 texture = ExtResource("8_kk3ma")
 expand_mode = 1
 
@@ -207,6 +235,10 @@ offset_right = 666.0
 offset_bottom = 534.0
 text = "Select Character. 
 TM Opera O is default"
+
+[node name="TextureButton" type="TextureButton" parent="charselect"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="credits" type="CanvasLayer" parent="."]
 visible = false
@@ -250,6 +282,7 @@ https://www.reddit.com/r/UmaMusume/comments/1p6f0vl/why_is_tm_opera_o_sometimes_
 [connection signal="pressed" from="main menu/char" to="." method="_on_char_pressed"]
 [connection signal="pressed" from="main menu/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="main menu/playbut" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="charselect/Mayano" to="." method="_on_mayano_pressed"]
 [connection signal="pressed" from="charselect/Doto" to="." method="_on_doto_pressed"]
 [connection signal="pressed" from="charselect/Opera" to="." method="_on_opera_pressed"]
 [connection signal="pressed" from="charselect/CharReturn" to="." method="_on_char_return_pressed"]

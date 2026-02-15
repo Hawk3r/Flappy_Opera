@@ -1,22 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6scxjmiqgwk0"]
+[gd_scene load_steps=10 format=3 uid="uid://b6scxjmiqgwk0"]
 
 [ext_resource type="Script" uid="uid://c4me270y0mvvq" path="res://operaO.gd" id="1_va2mr"]
 [ext_resource type="Texture2D" uid="uid://dgblnxa0tdh54" path="res://operaO_1.png" id="2_4rjmf"]
-[ext_resource type="Texture2D" uid="uid://bhk1vxp16pkj6" path="res://operaO_3.png" id="3_l456w"]
-[ext_resource type="Texture2D" uid="uid://cjjd3jisxcbjy" path="res://operaO_2.png" id="4_jf7st"]
+[ext_resource type="Texture2D" uid="uid://bxdpu5jfqpht2" path="res://mayano_1.png" id="3_va2mr"]
+[ext_resource type="Texture2D" uid="uid://ce8aj5bw5nmv" path="res://mayano_2.png" id="4_4rjmf"]
 [ext_resource type="AudioStream" uid="uid://dpthngl1nj5wt" path="res://makedebut.mp3" id="5_lgs1q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ggwtq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_l456w")
+"texture": ExtResource("3_va2mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_jf7st")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_4rjmf")
+"texture": ExtResource("4_4rjmf")
 }],
 "loop": true,
 "name": &"default",
@@ -24,12 +21,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lh25w"]
-radius = 41.0
-height = 132.0
+radius = 34.0
+height = 182.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1l1f"]
-radius = 42.0
-height = 136.0
+radius = 33.0
+height = 194.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l456w"]
+radius = 29.0
+height = 90.0
 
 [node name="Mayano" type="CharacterBody2D"]
 script = ExtResource("1_va2mr")
@@ -41,21 +42,25 @@ scale = Vector2(0.4023669, 0.41463417)
 texture = ExtResource("2_4rjmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(61.375, 98.33153)
 scale = Vector2(0.41413045, 0.41413045)
 sprite_frames = SubResource("SpriteFrames_ggwtq")
-speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(62, 88)
+position = Vector2(62, 92)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_lh25w")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(62, 88)
+position = Vector2(60, 90)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_u1l1f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(94, 56)
+shape = SubResource("CapsuleShape2D_l456w")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(605, 414)
