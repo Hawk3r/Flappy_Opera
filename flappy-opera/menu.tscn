@@ -241,7 +241,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="credits" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Creturn" type="Button" parent="credits"]
 offset_left = 478.0
@@ -272,11 +271,7 @@ Uma Musume: Umapyoi Densetsu (8bit,NES style) by ころん-COLON 8BIT **MUSIC-**
 https://www.youtube.com/watch?v=nfbdD5WfxeI
 
 (Game OST) Uma Musume - Character Select (Make Debut)
-https://www.youtube.com/watch?v=YIfFvzwiNvM&list=PLZGtjAl-fznrHM5bwcyp3CNFL4vmncymq&index=10
-
-Doto sheep jpeg
-found it in this specific reddit post
-https://www.reddit.com/r/UmaMusume/comments/1p6f0vl/why_is_tm_opera_o_sometimes_depicted_as_a_bird/"
+https://www.youtube.com/watch?v=YIfFvzwiNvM&list=PLZGtjAl-fznrHM5bwcyp3CNFL4vmncymq&index=10"
 
 [connection signal="pressed" from="main menu/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main menu/char" to="." method="_on_char_pressed"]
