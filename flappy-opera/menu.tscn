@@ -263,8 +263,7 @@ offset_bottom = 536.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ecwwl")
 text = "Credits
-developer: Hawk3r 
-github link: https://github.com/Hawk3r
+developer: Felicitations at Itch.IO
 
 OSTs used
 Uma Musume: Umapyoi Densetsu (8bit,NES style) by ころん-COLON 8BIT **MUSIC-**
