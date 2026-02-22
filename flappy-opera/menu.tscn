@@ -241,6 +241,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="credits" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Creturn" type="Button" parent="credits"]
 offset_left = 478.0
